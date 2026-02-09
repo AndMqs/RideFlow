@@ -12,6 +12,9 @@ builder.Services.AddDbContext<RideflowContext>();
 builder.Services.AddScoped<UserRepository>();
 builder.Services.AddScoped<UserService>();
 
+builder.Services.AddScoped<DriverRepository>();
+builder.Services.AddScoped<DriverService>();
+
 
 var app = builder.Build();
 

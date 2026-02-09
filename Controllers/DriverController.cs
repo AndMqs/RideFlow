@@ -3,23 +3,32 @@ using Microsoft.AspNetCore.Mvc;
 namespace RideFlow.Controllers;
 
 [ApiController]
-[Route("user")]
-public class UserController : ControllerBase
+[Route("driver")]
+public class DriverController : ControllerBase
 {
     
-    private readonly UserService _service;
+    private readonly DriverService _service;
 
-    public UserController(UserService service)
+    public DriverController(DriverService service)
     {
         _service = service;
     }
 
-    [HttpPost(Name = "CreateUser")]
-    public IActionResult CreateUser([FromBody] CreateUserDto dto)    {
-      
-      _service.CreateUser(dto);
-      return Ok("Usuário cadastrado com sucesso.");
+    [HttpPost(Name = "CreateDriver")]
+    public IActionResult CreateDriver([FromBody] CreateDriverDto dto)    {
+        try
+        {
+            _service.CreateDriver(dto);
+            return Ok("Motorista cadastrado com sucesso.");
+        }
+        catch(Exception ex)
+        {
+            return BadRequest(ex.Message);
+        }
+
     }
+
+    /*
 
     [HttpGet(Name = "GetAllUsers")]
     public IActionResult GeAlltUsers()
@@ -53,4 +62,6 @@ public class UserController : ControllerBase
         }
         
    }
+
+   */
 }
