@@ -20,4 +20,9 @@ public class DriverRepository
         return dbContext.TbDrivers
             .FirstOrDefault(d => d.Plate == plate);
     }
+
+    public List<TbDriver> GetAllDrives()
+    {
+        return dbContext.TbDrivers.ToList();
+    }
 }

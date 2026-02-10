@@ -28,14 +28,16 @@ public class DriverController : ControllerBase
 
     }
 
-    /*
+    
 
-    [HttpGet(Name = "GetAllUsers")]
-    public IActionResult GeAlltUsers()
+    [HttpGet(Name = "GetAllDrivers")]
+    public IActionResult GeAlltDrivers()
     {
-        var user = _service.GetUsers();
-        return Ok(user);
+        var driver = _service.GetDrivers();
+        return Ok(driver);
     }
+
+    /*
 
     [HttpPatch("{id}", Name = "UpdateUsers")]
     public IActionResult UpdateUser( Guid Id, [FromBody] UpdateUserDto dto)

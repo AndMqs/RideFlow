@@ -27,4 +27,26 @@ public class DriverService
         };
         _repository.Add(driver);
     }
+
+    public List<DriverResponseDto> GetDrivers()
+    {
+        List<TbDriver> tbDrivers = _repository.GetAllDrives();
+        List<DriverResponseDto> driversDto = new List<DriverResponseDto>();
+
+        foreach(TbDriver tbDriver in tbDrivers)
+        {
+            DriverResponseDto dto = new DriverResponseDto();
+            dto.Id = tbDriver.Id;
+            dto.Nome = tbDriver.Namedriver;
+            dto.CNH = tbDriver.Cnh;
+            dto.Placa = tbDriver.Plate;
+            dto.ModeloDoCarro = tbDriver.Modelcar;
+            dto.AnoDoCarro = tbDriver.Yearcar;
+            dto.DataDeCriacao = tbDriver.CreatedAt;
+
+            driversDto.Add(dto);
+        }
+
+        return driversDto;
+    }
 }
