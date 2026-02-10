@@ -25,4 +25,11 @@ public class DriverRepository
     {
         return dbContext.TbDrivers.ToList();
     }
+
+     public TbDriver? GetById(Guid id)
+    {
+        return dbContext.TbDrivers.Find(id);
+    }
+
+       
 }

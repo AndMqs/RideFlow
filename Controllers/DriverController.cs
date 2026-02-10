@@ -28,7 +28,6 @@ public class DriverController : ControllerBase
 
     }
 
-    
 
     [HttpGet(Name = "GetAllDrivers")]
     public IActionResult GeAlltDrivers()
@@ -37,33 +36,7 @@ public class DriverController : ControllerBase
         return Ok(driver);
     }
 
-    /*
+    
 
-    [HttpPatch("{id}", Name = "UpdateUsers")]
-    public IActionResult UpdateUser( Guid Id, [FromBody] UpdateUserDto dto)
-    {
-        var user = _service.UpdateUser(Id, dto);
-
-        if (user == null)
-            return NotFound("Usuário não encontrado");
-
-        return Ok(user);
-    }
-
-  [HttpDelete("{id}", Name = "DeleteUsers")]
-   public IActionResult DeleteUser(Guid Id)
-   {
-        try
-        {
-            _service.DeleteUser(Id);
-            return NoContent();
-        }
-        catch(Exception ex)
-        {
-            return NotFound(ex);
-        }
-        
-   }
-
-   */
+ 
 }
