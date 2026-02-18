@@ -35,6 +35,11 @@ public class ServiceTypeRepository
         return dbContext.TbServicetypes.Find(id);
     }
 
+    public async Task<TbServicetype?> GetByIdAsync(Guid id)
+    {
+        return await dbContext.TbServicetypes.FindAsync(id);
+    }
+
     // método para verificar se existem registros
     public bool Exists()
     {

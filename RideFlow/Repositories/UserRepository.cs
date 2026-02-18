@@ -28,6 +28,11 @@ public class UserRepository
         return dbContext.TbUsers.Find(id);
     }
 
+    public async Task<TbUser?> GetByIdAsync(Guid id)
+    {
+        return await dbContext.TbUsers.FindAsync(id);
+    }
+
     public void UpdateUsers(TbUser user)
     {
         dbContext.TbUsers.Update(user);

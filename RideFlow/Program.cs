@@ -23,11 +23,19 @@ builder.Services.AddOpenApi();
 
 builder.Services.AddScoped<UserRepository>();
 builder.Services.AddScoped<UserService>();
+
 builder.Services.AddScoped<DriverRepository>();
 builder.Services.AddScoped<DriverService>();
+
 builder.Services.AddScoped<RideRepository>();
 builder.Services.AddScoped<RideService>();
+
 builder.Services.AddScoped<ServiceTypeRepository>();
+
+builder.Services.AddScoped<RatingRepository>();
+builder.Services.AddScoped<RatingService>();
+
+builder.Services.AddScoped<RelatorioService>();
 
 var app = builder.Build();
 

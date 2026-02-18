@@ -33,6 +33,11 @@ public class DriverRepository
         return dbContext.TbDrivers.Find(id);
     }
 
+    public async Task<TbDriver?> GetByIdAsync(Guid id)
+    {
+        return await dbContext.TbDrivers.FindAsync(id);
+    }
+
     public TbDriver? GetByCnh(string cnh)
     {
         return dbContext.TbDrivers
