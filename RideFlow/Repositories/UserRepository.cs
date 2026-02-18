@@ -1,6 +1,8 @@
 using RideFlow.Models;
 using Microsoft.EntityFrameworkCore;
 
+namespace RideFlow.Repositories;
+
 public class UserRepository
 {
     private RideflowContext dbContext;

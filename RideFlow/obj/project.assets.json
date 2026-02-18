@@ -3207,9 +3207,8 @@
           "Microsoft.NET.Test.Sdk": "18.0.1",
           "Moq": "4.20.72",
           "Npgsql.EntityFrameworkCore.PostgreSQL": "10.0.0",
-          "NUnit": "4.4.0",
-          "NUnit.Analyzers": "4.7.0",
-          "NUnit3TestAdapter": "6.1.0"
+          "xunit": "2.6.1",
+          "xunit.runner.visualstudio": "2.5.3"
         },
         "imports": [
           "net461",

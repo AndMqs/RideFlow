@@ -1,4 +1,7 @@
 using RideFlow.Models;
+using RideFlow.Repositories;
+
+namespace RideFlow.Service;
 
 public class UserService
 {

@@ -1,21 +1,18 @@
-using NUnit.Framework;
 using Moq;
 using Microsoft.EntityFrameworkCore;
-
-using RideFlow;
 using RideFlow.Models;
 using RideFlow.Repositories;
-namespace RideFlow.Repositories;
+using Xunit;
 
-[TestFixture]
+namespace Tests.Repositories;
+
 public class UserRepositoryTests
 {
-    private Mock<RideflowContext> _contextMock;
-    private Mock<DbSet<TbUser>> _dbSetMock;
-    private UserRepository _repository;
+    private readonly Mock<RideflowContext> _contextMock;
+    private readonly Mock<DbSet<TbUser>> _dbSetMock;
+    private readonly UserRepository _repository;
 
-    [SetUp]
-    public void Setup()
+    public UserRepositoryTests()
     {
         _contextMock = new Mock<RideflowContext>();
         _dbSetMock = new Mock<DbSet<TbUser>>();
@@ -25,7 +22,7 @@ public class UserRepositoryTests
         _repository = new UserRepository(_contextMock.Object);
     }
 
-    [Test]
+    [Fact]
     public void Add_ShouldAddUser()
     {
         // Arrange

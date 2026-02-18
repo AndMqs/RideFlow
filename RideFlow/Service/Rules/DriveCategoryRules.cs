@@ -1,13 +1,16 @@
 public static class DriverCategoryRules
 {
-    public static string GetCategoryByCarYear(int YearCar)
+    public static string GetCategoryByCarYear(int yearCar)
     {
-             if (YearCar <= 2010)
+        if (yearCar >= 2023)
+            return "vip";
+            
+        if (yearCar >= 2016)
+            return "premium";
+            
+        if (yearCar <= 2015)
             return "basic";
 
-        if (YearCar >= 2011 && YearCar <= 2020)
-            return "premium";
-
-        return "vip";
+        return "Categoria desconhecida";
     }
 }

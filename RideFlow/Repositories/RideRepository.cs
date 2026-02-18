@@ -1,4 +1,8 @@
+using Microsoft.EntityFrameworkCore;
 using RideFlow.Models;
+
+
+namespace RideFlow.Repositories;
 
 public class RideRepository
 {
@@ -9,16 +13,19 @@ public class RideRepository
         dbContext = context;
     }
 
-    public async Task Add(TbRide ride)
+    public void CreateRide(TbRide ride)
     {
         dbContext.TbRides.Add(ride);
-        await dbContext.SaveChangesAsync();
+        dbContext.SaveChanges();
     }
-
     
     public async Task<TbRide?> GetById(Guid id)
     {
-        return await dbContext.TbRides.FindAsync(id);
+        return await dbContext.TbRides
+            .Include(r => r.User)
+            .Include(r => r.Driver)
+            .Include(r => r.Servicetype)
+            .FirstOrDefaultAsync(r => r.Id == id);
     }
 
     
@@ -26,7 +33,6 @@ public class RideRepository
     {
         return dbContext.TbRides.ToList();
     }
-
     
     public async Task Update(TbRide ride)
     {
@@ -34,17 +40,27 @@ public class RideRepository
         await dbContext.SaveChangesAsync();
     }
 
-   
-  public bool DriverIsBusy(Guid driverId)
+    public TbRide? GetRideInProgressByDriver(Guid driverId)
     {
-        var ride = dbContext.TbRides
+        return dbContext.TbRides
             .FirstOrDefault(r => r.DriverId == driverId 
-                              && r.Status == RideStatus.in_progress);
+                            && r.Status == RideStatus.in_progress);
+    }
 
-        if (ride == null)
-            return false;
+    public async Task<List<TbRide>> GetAllRiders()
+    {
+        return await dbContext.TbRides
+            .Include(r => r.User)           
+            .Include(r => r.Driver)          
+            .Include(r => r.Servicetype)     
+            .ToListAsync();
+    }
 
-        return true;
+    public List<TbRide> GetRideByStatus(RideStatus status)
+    {
+        return dbContext.TbRides
+            .Where(r => r.Status == status)
+            .ToList();
     }
 
 }
