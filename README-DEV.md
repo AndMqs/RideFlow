@@ -82,8 +82,7 @@ Objetos para transferência de dados entre as camadas:
 - .NET 10  
 - Entity Framework Core 10  
 - PostgreSQL 17  
-- Npgsql (Provider PostgreSQL para EF Core)  
-- Swagger / OpenAPI  
+- Npgsql (Provider PostgreSQL para EF Core)   
 
 ---
 
@@ -93,7 +92,7 @@ Objetos para transferência de dados entre as camadas:
 ```json
 {
   "ConnectionStrings": {
-    "DefaultConnection": "Host=localhost;Database=rideflow;Username=postgres;Password=12345"
+    "DefaultConnection": "Host=localhost;Database=rideflow;Username=SEUUSERNAME;Password=SEUPASSWORD"
   }
 }
 ```
