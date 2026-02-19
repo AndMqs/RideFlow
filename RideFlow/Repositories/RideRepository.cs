@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using RideFlow.Models;
+using RideFlow.DTOs;
 
 
 namespace RideFlow.Repositories;
@@ -62,5 +63,33 @@ public class RideRepository
             .Where(r => r.Status == status)
             .ToList();
     }
+
+    public async Task<List<HistoricoCorridaDto>> GetHistoricoByUserId(Guid userId)
+{
+    var historico = await dbContext.TbRides
+        .Where(r => r.UserId == userId)
+        .Include(r => r.User)
+        .Include(r => r.Driver)
+        .Include(r => r.Servicetype)
+        .Include(r => r.TbRatings) // Isso traz as avaliações
+        .Select(r => new HistoricoCorridaDto
+        {
+            Id = r.Id,
+            NomePassageiro = r.User.Nameuser,
+            NomeMotorista = r.Driver.Namedriver,
+            Placa = r.Driver.Plate,
+            Categoria = r.Servicetype.Category.ToString(),
+            Valor = r.TotalValue,
+            Origem = r.Startpoint,
+            Destino = r.Destiny,
+            Status = r.Status.ToString(),
+            Data = r.CreatedAt ?? DateTime.MinValue,
+            Avaliacao = r.TbRatings.FirstOrDefault() != null ? r.TbRatings.First().Rate : (int?)null,
+            Comentario = r.TbRatings.FirstOrDefault() != null ? r.TbRatings.First().Comment : null
+        })
+        .ToListAsync();
+    
+    return historico;
+}
 
 }

@@ -205,4 +205,48 @@ public class RideService
             Mensagem = mensagem
         };
     }
+
+    public async Task<FinishedRideResponseDto> FinishRide(Guid rideId)
+    {
+        var ride = await _rideRepository.GetById(rideId);
+        if (ride == null)
+        {
+            throw new Exception($"Corrida com ID {rideId} não encontrada.");
+        }
+
+        if (ride.Status != RideStatus.in_progress)
+        {
+            throw new Exception($"Não é possível finalizar uma corrida com status '{ride.Status}'.");
+        }
+
+       var user = await _userRepository.GetByIdAsync(ride.UserId);
+       var driver = await _driverRepository.GetByIdAsync(ride.DriverId);
+       var serviceType = await _serviceTypeRepository.GetByIdAsync(ride.ServicetypeId);
+
+       decimal valorAPagar = ride.TotalValue;
+
+        ride.Status = RideStatus.finished;
+
+        await _rideRepository.Update(ride);
+
+        string mensagem = $"Corrida finalizada com sucesso! " +
+                     $"Valor total: R$ {valorAPagar:F2}. " +
+                     $"Forma de pagamento: {ride.PaymentMethod}. " +
+                     $"Obrigado por viajar conosco!";
+
+        return new FinishedRideResponseDto
+        {
+            Id = ride.Id,
+            NomePassageiro = user?.Nameuser ?? "Usuário não encontrado",
+            NomeMotorista = driver?.Namedriver ?? "Motorista não encontrado",
+            Categoria = serviceType?.Category.ToString() ?? "Categoria não disponível",
+            Status = ride.Status.ToString(),
+            FormaPagamento = ride.PaymentMethod.ToString(),
+            ValorAPagar = valorAPagar.ToString("F2"),
+            Mensagem = mensagem
+        };
+
+    }
+
+
 }
