@@ -1,4 +1,4 @@
-Repositório destinado ao projeto final do Code RDInversity, desenvolvido por [Andresa Marques](https://www.linkedin.com/in/andresa-marques-dev/) e [Fernanda Worn](https://www.linkedin.com/in/fernandaworm/).
+Repositório destinado ao projeto final do Code RDIversity, desenvolvido por [Andresa Marques](https://www.linkedin.com/in/andresa-marques-dev/) e [Fernanda Worn](https://www.linkedin.com/in/fernandaworm/).
 
 ---
 
