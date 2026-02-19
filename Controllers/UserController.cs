@@ -18,7 +18,7 @@ public class UserController : ControllerBase
     public IActionResult CreateUser([FromBody] CreateUserDto dto)    {
       
       _service.CreateUser(dto);
-      return Ok("Usuário cadastrado.");
+      return Ok("Usuário cadastrado com sucesso.");
     }
 
     [HttpGet(Name = "GetAllUsers")]
