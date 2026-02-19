@@ -1,5 +1,7 @@
 using RideFlow.Models;
 
+namespace RideFlow.Repositories;
+
 public class DriverRepository
 {
     private RideflowContext dbContext;
@@ -21,7 +23,7 @@ public class DriverRepository
             .FirstOrDefault(d => d.Plate == plate);
     }
 
-    public List<TbDriver> GetAllDrives()
+    public List<TbDriver> GetAllDrivers()
     {
         return dbContext.TbDrivers.ToList();
     }
@@ -31,5 +33,10 @@ public class DriverRepository
         return dbContext.TbDrivers.Find(id);
     }
 
-       
+    public TbDriver? GetByCnh(string cnh)
+    {
+        return dbContext.TbDrivers
+            .FirstOrDefault(d => d.Cnh == cnh);
+    }
+
 }

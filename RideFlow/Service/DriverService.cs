@@ -1,4 +1,7 @@
 using RideFlow.Models;
+using RideFlow.Repositories;
+
+namespace RideFlow.Service;
 
 public class DriverService
 {
@@ -30,7 +33,7 @@ public class DriverService
 
     public List<DriverResponseDto> GetDrivers()
     {
-        List<TbDriver> tbDrivers = _repository.GetAllDrives();
+        List<TbDriver> tbDrivers = _repository.GetAllDrivers();
         List<DriverResponseDto> driversDto = new List<DriverResponseDto>();
 
         foreach(TbDriver tbDriver in tbDrivers)
@@ -48,6 +51,33 @@ public class DriverService
         }
 
         return driversDto;
+    }
+
+    public List<DriverCategoryDto> GetDriversByCategory(string category)
+    {
+        List<TbDriver> drivers = _repository.GetAllDrivers();
+
+        List<DriverCategoryDto> result = new List<DriverCategoryDto>();
+
+        foreach (TbDriver driver in drivers)
+        {
+            string driverCategory = DriverCategoryRules.GetCategoryByCarYear(driver.Yearcar);
+
+            if (driverCategory.ToLower() == category.ToLower())
+            {
+                DriverCategoryDto dto = new DriverCategoryDto();
+
+                dto.NomeMotorista = driver.Namedriver;
+                dto.Categoria = driverCategory;
+                dto.Placa = driver.Plate;
+                dto.AnoDoCarro = driver.Yearcar;
+                dto.ModeloDoCarro = driver.Modelcar;
+
+                result.Add(dto);
+            }
+        }
+
+        return result;
     }
 }
    

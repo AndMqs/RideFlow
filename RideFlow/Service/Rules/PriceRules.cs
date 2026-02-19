@@ -1,6 +1,6 @@
 public static class PriceRules
 {
-    public static decimal GetPricePerKm(string category, decimal km)
+    public static decimal GetRidePrice(string category, decimal km)
     {
         decimal basePrice;
         decimal multiplier;

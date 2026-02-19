@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using RideFlow.Service;
 
 namespace RideFlow.Controllers;
 
@@ -36,6 +37,12 @@ public class DriverController : ControllerBase
         return Ok(driver);
     }
 
+    [HttpGet("category/{category}", Name = "GetDriversByCategory")]
+    public IActionResult GetDriversByCategory(string category)
+    {
+        var driversByCategory = _service.GetDriversByCategory(category);
+        return Ok(driversByCategory);
+    }
     
 
  
