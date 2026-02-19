@@ -5,20 +5,29 @@ Repositório destinado ao projeto final do Code RDInversity, desenvolvido por [A
 <img width="1536" height="1024" alt="logo" src="https://github.com/user-attachments/assets/6f2e17c7-0359-4119-b8f8-d0e358ac193a" />
 
 
+# 🚗 RideFlow API
 
+API de transporte individual similar a Uber, desenvolvida em **.NET 10** com **Entity Framework Core** e **PostgreSQL**.  
+O sistema permite gerenciar usuários, motoristas, corridas e avaliações, com geração de relatórios em CSV.
 
+---
 
+## 📋 Índice
 
-
-
-
-
-
-
-
-
-
-
+- [Arquitetura](README-DEV.md#arquitetura) 
+- [Tecnologias](README-DEV.md#tecnologias)
+- [Configuração do Banco](README-DEV.md#configuracao-do-banco)
+- [Endpoints](README-DEV.md#endpoints)
+  - [Usuários](README-DEV.md#usuarios)
+  - [Motoristas](README-DEV.md#motoristas)
+  - [Corridas](README-DEV.md#corridas)
+  - [Avaliações](README-DEV.md#avaliacoes)
+- [Relatórios](README-DEV.md#relatorios)
+- [Estrutura do Projeto](README-DEV.md#estrutura-do-projeto)
+- [Como Executar](README-DEV.md#como-executar)
+- [Regras de Negócio](README-DEV.md#regras-de-negocio-implementadas)
+- [Autores](README-DEV.md#autores)
+- [Licença](README-DEV.md#licenca)
 
 
 <h2 align="center"> Requisitos do Projeto Final </h2>
