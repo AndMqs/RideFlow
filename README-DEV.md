@@ -5,7 +5,7 @@ O sistema permite gerenciar usuários, motoristas, corridas e avaliações, com 
 
 ---
 
-## Arquitetura
+## Arquitetura 🏗️ 
 
 O projeto segue uma arquitetura em camadas com separação clara de responsabilidades:
 
