@@ -5,7 +5,7 @@ O sistema permite gerenciar usuários, motoristas, corridas e avaliações, com 
 
 ---
 
-## Arquitetura  
+# Arquitetura  
 
 🏗️  O projeto segue uma arquitetura em camadas com separação clara de responsabilidades:
 
@@ -60,7 +60,7 @@ Objetos para transferência de dados entre as camadas:
 
 ---
 
-##  Tecnologias
+#  Tecnologias
 
 - .NET 10  
 - Entity Framework Core 10  
@@ -69,7 +69,7 @@ Objetos para transferência de dados entre as camadas:
 
 ---
 
-##  Configuração do Banco
+#  Configuração do Banco
 
 ### String de conexão (`appsettings.json`)
 ```json
@@ -89,7 +89,7 @@ O banco utiliza colunas VARCHAR para enums:
 
 ---
 
-##  Endpoints
+#  Endpoints
 
 ###  Usuários
 Base URL: `/user`
@@ -169,7 +169,7 @@ Regras:
 
 ---
 
-##  Relatórios
+#  Relatórios
 
 ### Relatório detalhado
 ```
@@ -189,7 +189,7 @@ Gera estatísticas:
 
 ---
 
-##  Estrutura do Projeto
+## Estrutura do Projeto
 ```
 RideFlow/
 ├── Controllers/
@@ -231,7 +231,7 @@ RideFlow/
 
 ---
 
-##  Como Executar
+#  Como Executar
 
 1. Configure o PostgreSQL  
 2. Atualize `appsettings.json`  
@@ -248,7 +248,7 @@ http://localhost:5015
 
 ---
 
-##  Regras de Negócio Implementadas
+#  Regras de Negócio Implementadas
 
 ### Motoristas
 - basic: até 2015  
@@ -263,7 +263,14 @@ http://localhost:5015
 ### Avaliações
 - nota obrigatória  
 - 1 avaliação por corrida  
-- só corrida finalizada  
+- só corrida finalizada
+
+---
+
+# Cobertura de Testes
+Foram feitos testes unitários em xUnit em todo o projeto, obtendo a porcentagem de cobertura abaixo:
+
+<img width="780" height="216" alt="image" src="https://github.com/user-attachments/assets/092f219f-fc2c-4e3c-9204-009a8c2013d4" />
 
 ---
 
