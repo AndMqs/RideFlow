@@ -5,9 +5,9 @@ O sistema permite gerenciar usuários, motoristas, corridas e avaliações, com 
 
 ---
 
-## Arquitetura 🏗️ 
+## Arquitetura  
 
-O projeto segue uma arquitetura em camadas com separação clara de responsabilidades:
+🏗️  O projeto segue uma arquitetura em camadas com separação clara de responsabilidades:
 
 ### Camada de Controllers (API)
 Responsável por receber as requisições HTTP, validar entrada e retornar respostas.  
@@ -56,9 +56,11 @@ Objetos para transferência de dados entre as camadas:
 
 ### Modelagem de dados
 
+<img width="814" height="446" alt="image" src="https://github.com/user-attachments/assets/a06a09b8-0afc-415c-bc41-c545bed50063" />
+
 ---
 
-## 🛠️ Tecnologias
+##  Tecnologias
 
 - .NET 10  
 - Entity Framework Core 10  
@@ -67,7 +69,7 @@ Objetos para transferência de dados entre as camadas:
 
 ---
 
-## 🗄️ Configuração do Banco
+##  Configuração do Banco
 
 ### String de conexão (`appsettings.json`)
 ```json
@@ -87,9 +89,9 @@ O banco utiliza colunas VARCHAR para enums:
 
 ---
 
-## 📍 Endpoints
+##  Endpoints
 
-### 👤 Usuários
+###  Usuários
 Base URL: `/user`
 
 | Método | Rota | Descrição |
@@ -101,7 +103,7 @@ Base URL: `/user`
 
 ---
 
-### 🚘 Motoristas
+###  Motoristas
 Base URL: `/driver`
 
 | Método | Rota | Descrição |
@@ -123,7 +125,7 @@ Base URL: `/driver`
 
 ---
 
-### 🏁 Corridas
+###  Corridas
 Base URL: `/ride`
 
 | Método | Rota | Descrição |
@@ -150,7 +152,7 @@ Base URL: `/ride`
 
 ---
 
-### ⭐ Avaliações
+###  Avaliações
 Base URL: `/rating`
 
 | Método | Rota | Descrição |
@@ -167,7 +169,7 @@ Regras:
 
 ---
 
-## 📊 Relatórios
+##  Relatórios
 
 ### Relatório detalhado
 ```
@@ -187,7 +189,7 @@ Gera estatísticas:
 
 ---
 
-## 📁 Estrutura do Projeto
+##  Estrutura do Projeto
 ```
 RideFlow/
 ├── Controllers/
@@ -229,7 +231,7 @@ RideFlow/
 
 ---
 
-## 🚀 Como Executar
+##  Como Executar
 
 1. Configure o PostgreSQL  
 2. Atualize `appsettings.json`  
@@ -246,7 +248,7 @@ http://localhost:5015
 
 ---
 
-## 📝 Regras de Negócio Implementadas
+##  Regras de Negócio Implementadas
 
 ### Motoristas
 - basic: até 2015  
@@ -265,10 +267,10 @@ http://localhost:5015
 
 ---
 
-## 👥 Autores
+##  Autores
 Projeto de estudo em .NET, EF Core e PostgreSQL.
 
 ---
 
-## 📄 Licença
+##  Licença
 Uso educacional.
