@@ -5,25 +5,6 @@ O sistema permite gerenciar usuários, motoristas, corridas e avaliações, com 
 
 ---
 
-## 📋 Índice
-
-- [Arquitetura](#arquitetura)
-- [Tecnologias](#tecnologias)
-- [Configuração do Banco](#configuração-do-banco)
-- [Endpoints](#endpoints)
-  - [Usuários](#usuários)
-  - [Motoristas](#motoristas)
-  - [Corridas](#corridas)
-  - [Avaliações](#avaliações)
-- [Relatórios](#relatórios)
-- [Estrutura do Projeto](#estrutura-do-projeto)
-- [Como Executar](#como-executar)
-- [Regras de Negócio](#regras-de-negócio-implementadas)
-- [Autores](#autores)
-- [Licença](#licença)
-
----
-
 ## 🏗️ Arquitetura
 
 O projeto segue uma arquitetura em camadas com separação clara de responsabilidades:
