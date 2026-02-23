@@ -1,9 +1,3 @@
-# 🚗 RideFlow API
-
-API de transporte individual similar a Uber, desenvolvida em **.NET 10** com **Entity Framework Core** e **PostgreSQL**.  
-O sistema permite gerenciar usuários, motoristas, corridas e avaliações, com geração de relatórios em CSV.
-
----
 
 # Arquitetura  
 
