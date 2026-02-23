@@ -5,7 +5,7 @@
 [![EF Core](https://img.shields.io/badge/EF%20Core-6A8CAF?style=flat&logo=dotnet&logoColor=white)](https://learn.microsoft.com/ef/core/)
 [![Test Coverage](https://img.shields.io/badge/Coverage-98%25-6FB98F?style=flat)](README-DEV.md#cobertura-de-testes)
 [![Status](https://img.shields.io/badge/Status-Em%20Desenvolvimento-F4A261?style=flat)](README-DEV.md#arquitetura) 
-[![Licença](https://img.shields.io/badge/Licen%C3%A7a-MIT-6FB98F?style=flat)](README-DEV.md#licenca)
+[![Licença](https://img.shields.io/badge/Licen%C3%A7a-MIT-6FB98F?style=flat)](README-DEV.md#licença)
 
 ---
 
