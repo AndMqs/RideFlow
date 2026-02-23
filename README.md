@@ -1,11 +1,11 @@
-![C#](https://img.shields.io/badge/C%23-6E7EBE?style=flat&logo=c-sharp&logoColor=white)
-![.NET](https://img.shields.io/badge/.NET-5B6FC2?style=flat&logo=dotnet&logoColor=white)
-![PostgreSQL](https://img.shields.io/badge/PostgreSQL-5F8FBF?style=flat&logo=postgresql&logoColor=white)
-![xUnit](https://img.shields.io/badge/xUnit-7C5BA3?style=flat&logo=xunit&logoColor=white)
-![EF Core](https://img.shields.io/badge/EF%20Core-6A8CAF?style=flat&logo=dotnet&logoColor=white)
-![Test Coverage](https://img.shields.io/badge/Coverage-98%25-6FB98F?style=flat)
-![Status](https://img.shields.io/badge/Status-Em%20Desenvolvimento-F4A261?style=flat)
-![Licença](https://img.shields.io/badge/Licen%C3%A7a-MIT-6FB98F?style=flat)
+[![C#](https://img.shields.io/badge/C%23-6E7EBE?style=flat&logo=c-sharp&logoColor=white)](https://learn.microsoft.com/dotnet/csharp/)
+[![.NET](https://img.shields.io/badge/.NET-5B6FC2?style=flat&logo=dotnet&logoColor=white)](https://dotnet.microsoft.com/)
+[![PostgreSQL](https://img.shields.io/badge/PostgreSQL-5F8FBF?style=flat&logo=postgresql&logoColor=white)](https://www.postgresql.org/)
+[![xUnit](https://img.shields.io/badge/xUnit-7C5BA3?style=flat&logo=xunit&logoColor=white)](https://xunit.net/)
+[![EF Core](https://img.shields.io/badge/EF%20Core-6A8CAF?style=flat&logo=dotnet&logoColor=white)](https://learn.microsoft.com/ef/core/)
+[![Test Coverage](https://img.shields.io/badge/Coverage-98%25-6FB98F?style=flat)](README-DEV.md#cobertura-de-testes)
+[![Status](https://img.shields.io/badge/Status-Em%20Desenvolvimento-F4A261?style=flat)](README-DEV.md#arquitetura) 
+[![Licença](https://img.shields.io/badge/Licen%C3%A7a-MIT-6FB98F?style=flat)](README-DEV.md#licenca)
 
 ---
 
