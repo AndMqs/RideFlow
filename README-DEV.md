@@ -43,11 +43,11 @@ Representa as tabelas do banco de dados:
 ### DTOs (Data Transfer Objects)
 Objetos para transferência de dados entre as camadas:
 
-- CreateUserDto, UpdateUserDto  
-- CreateDriverDto  
+- CreateUserDto, UpdateUserDto, UserResponseDto  
+- CreateDriverDto, DriverCategoryDto, DriverResponseDto  
 - CreateRideDto, CancelRideDto, FinishedRideDto  
-- CreateRatingDto  
-- RideResponseDto, CancelRideResponseDto, FinishedRideResponseDto, RatingResponseDto  
+- CreateRatingDto, RantingResponseDto  
+- CreateRideDto, RideResponseDto, CancelRideDto, CancelRideResponseDto, FinishedRideDto, FinishedResponseDto, RideHistoryDto   
 
 ### Regras de Negócio
 - **DriverCategoryRules** — Define categoria do motorista baseado no ano do carro  
@@ -110,7 +110,7 @@ Base URL: `/driver`
 |--------|------|-----------|
 | POST | /driver | Cadastrar motorista |
 | GET | /driver | Listar motoristas |
-| GET | /driver/category/{category} | Buscar por categoria |
+| GET | /driver/drivers?category={category} | Buscar por categoria |
 
 #### Exemplo POST `/driver`
 ```json
@@ -132,7 +132,7 @@ Base URL: `/ride`
 |--------|------|-----------|
 | POST | /ride | Criar corrida |
 | GET | /ride/all | Listar corridas |
-| GET | /ride/status/{status} | Buscar por status |
+| GET | /ride/status?status={status} | Buscar por status |
 | POST | /ride/cancel | Cancelar corrida |
 | POST | /ride/finish | Finalizar corrida |
 | GET | /ride/relatorio/{userId}/detalhado | CSV detalhado |
@@ -158,8 +158,8 @@ Base URL: `/rating`
 | Método | Rota | Descrição |
 |--------|------|-----------|
 | POST | /rating | Avaliar corrida |
-| GET | /rating/driver/{driverId} | Listar avaliações |
-| GET | /rating/driver/{driverId}/average | Média avaliações |
+| GET | /rating/ratings?driverId={driverId} | Listar avaliações |
+| GET | /rating//ratings/average?driverId={driverId} | Média avaliações |
 
 Regras:
 - Só avalia corrida finalizada  
@@ -252,8 +252,8 @@ http://localhost:5015
 
 ### Motoristas
 - basic: até 2015  
-- premium: 2016–2022  
-- vip: 2023+  
+- premium: >= 2016 
+- vip: >= 2023  
 
 ### Corridas
 - preço por categoria + km  
@@ -263,7 +263,7 @@ http://localhost:5015
 ### Avaliações
 - nota obrigatória  
 - 1 avaliação por corrida  
-- só corrida finalizada
+- só corrida finalizada consegue criar uma avaliação
 
 ---
 
@@ -275,9 +275,14 @@ Foram feitos testes unitários em xUnit em todo o projeto, obtendo a porcentagem
 ---
 
 ##  Autores
-Projeto de estudo em .NET, EF Core e PostgreSQL.
+
+ [Andresa Marques](https://www.linkedin.com/in/andresa-marques-dev/) 
+ 
+ [Fernanda Worn](https://www.linkedin.com/in/fernandaworm/)
+
 
 ---
 
 ##  Licença
 Uso educacional.
+Projeto de estudo em .NET, EF Core e PostgreSQL.
